@@ -1,0 +1,31 @@
+<% include ./partials/header %>
+
+<div class="container ptb-125">
+        <% if (results[0].length === 0 && results[1].length === 0) { %>
+    <div class="card item mb-30">
+        <div class="card-body">
+            <h5 class="card-title">Explore some topics.</h5>
+            <a href="/topics" class="btn btn-primary js-scroll-trigger">Explore</a>
+        </div>
+    </div>
+    <% } else { %>
+        <% for(var i=0; i < results[0].length; i++) { %>
+        <div class="card item mb-30">
+            <div class="card-body">
+                <a href="/topics/<%= results[0][i].id %>" class="mr-15"><img src="<%= results[0][i].imageurl %>" alt="" class="width-60 height-60 border-radius" /></a>
+                <a href="/topics/<%= results[0][i].id %>" class="bold fs-16"><%= results[0][i].name %></a>
+            </div>
+        </div>
+        <% } %>
+        <% for(var j=0; j < results[1].length; j++) { %>
+        <div class="card item mb-30">
+            <div class="card-body">
+                <a href="/users/<%= results[1][j].id %>" class="mr-15"><img src="<%= results[1][j].imageurl %>" alt="" class="width-60 height-60 border-radius" /></a>
+                <a href="/users/<%= results[1][j].id %>" class="bold fs-16"><%= results[1][j].username %></a>
+            </div>
+        </div>
+        <% } %>
+    <% } %>
+</div>
+
+<% include ./partials/footer %>

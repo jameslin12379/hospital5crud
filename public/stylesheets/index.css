@@ -1,0 +1,318 @@
+.mb-30 {
+    margin-bottom: 30px!important;
+}
+
+.mr-15 {
+    margin-right: 15px!important;
+}
+
+.black {
+    color: black!important;
+}
+
+:root {
+    --input-padding-x: 1.5rem;
+    --input-padding-y: 0.75rem;
+}
+
+.login,
+.image {
+    min-height: 100vh;
+}
+
+.bg-image {
+    background-image: url('/images/bg.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.login-heading {
+    font-weight: 300;
+}
+
+.btn-login {
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+    padding: 0.75rem 1rem;
+    /*border-radius: 2rem;*/
+}
+
+.form-label-group {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.form-label-group>input,
+.form-label-group>label {
+    padding: var(--input-padding-y) var(--input-padding-x);
+    height: auto;
+    /*border-radius: 2rem;*/
+}
+
+.form-label-group>label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    margin-bottom: 0;
+    /* Override default `<label>` margin */
+    line-height: 1.5;
+    color: #495057;
+    cursor: text;
+    /* Match the input under the label */
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    transition: all .1s ease-in-out;
+}
+
+.form-label-group input::-webkit-input-placeholder {
+    color: transparent;
+}
+
+.form-label-group input:-ms-input-placeholder {
+    color: transparent;
+}
+
+.form-label-group input::-ms-input-placeholder {
+    color: transparent;
+}
+
+.form-label-group input::-moz-placeholder {
+    color: transparent;
+}
+
+.form-label-group input::placeholder {
+    color: transparent;
+}
+
+.form-label-group input:not(:placeholder-shown) {
+    padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
+    padding-bottom: calc(var(--input-padding-y) / 3);
+}
+
+.form-label-group input:not(:placeholder-shown)~label {
+    padding-top: calc(var(--input-padding-y) / 3);
+    padding-bottom: calc(var(--input-padding-y) / 3);
+    font-size: 12px;
+    color: #777;
+}
+
+.success-alert {
+    position: fixed;
+    top: 90px;
+    right: 15px;
+    font-size: 16px;
+    z-index: 10;
+}
+
+
+.flex {
+    display: flex;
+}
+
+.jc-center {
+    justify-content: center;
+}
+
+.mt-15 {
+    margin-top: 15px!important;
+}
+
+.mb-10 {
+    margin-bottom: 10px!important;
+}
+
+.mb-15 {
+    margin-bottom: 15px!important;
+}
+
+.mb-30 {
+    margin-bottom: 30px!important;
+}
+
+.mb-50 {
+    margin-bottom: 50px!important;
+}
+
+.marginr-5 {
+    margin-right: 5px;
+}
+
+.mr-15 {
+    margin-right: 15px;
+}
+
+.mb-5 {
+    margin-bottom: 5px!important;
+}
+
+.width-60 {
+    width: 60px;
+}
+
+.height-60 {
+    height: 60px;
+}
+
+.width-100 {
+    width: 100px;
+}
+
+.height-100 {
+    height: 100px;
+}
+
+.border-radius {
+    border-radius: 50%;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.white {
+    color: white;
+}
+
+.cr-161616 {
+    color: #161616!important;
+}
+
+.black-half {
+    color: rgba(0,0,0,.5)!important;
+}
+
+.black-half:hover {
+    color: rgba(0,0,0,.7)!important;
+}
+
+.fs-16 {
+    font-size: 16px!important;
+}
+
+.fs-18 {
+    font-size: 18px!important;
+}
+
+.pt-150 {
+    padding-top: 150px!important;
+}
+
+.pt-100 {
+    padding-top: 100px!important;
+}
+
+.pb-100 {
+    padding-bottom: 100px!important;
+}
+
+.pb-150 {
+    padding-bottom: 150px!important;
+}
+
+.pd-6-12 {
+    padding: 6px 12px!important;
+}
+
+.plr-15p {
+    padding: 0 15%;
+}
+
+.ptb-125 {
+    padding-top: 125px!important;
+    padding-bottom: 125px!important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.cr-343a40 {
+    color: #343a40!important;
+}
+
+.bb-none {
+    border-bottom: none;
+}
+
+.op-05 {
+    opacity: 0.5;
+}
+
+.ai-c {
+    align-items: center;
+}
+
+.lh-2 {
+    line-height: 2!important;
+}
+
+.hidden {
+    display: none;
+}
+
+.width-100p {
+    width: 100%;
+}
+
+.bd-none {
+    border: 0!important;
+}
+
+textarea {
+    padding: 20px 24px 4px 24px!important;
+}
+
+select {
+    text-indent: 20px;
+}
+
+.btn {
+    padding: 15px 30px!important;
+}
+
+.pd-10-20 {
+    padding: 10px 20px!important;
+}
+
+@media (min-width: 981px) {
+    .vert {
+        display: flex;
+        justify-content: center;
+    }
+
+    .vert > div {
+        margin-bottom: 0!important;
+        margin-right: 15px;
+    }
+
+    .item, #commentTitle {
+        margin-left: 15%!important;
+        margin-right: 15%!important;
+    }
+}
+
+.pt-100 {
+    padding-top: 100px!important;
+}
+
+.active {
+    background: lightgray!important;
+}
+
+.ofx-s {
+    overflow-x: scroll!important;
+}
+
+.hidden {
+    display: none;
+}
+
+.shown {
+    display: block;
+}

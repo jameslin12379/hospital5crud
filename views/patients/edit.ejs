@@ -1,0 +1,57 @@
+<% include ../partials/header %>
+
+<div class="container ptb-125">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <h3 class="login-heading mb-4 text-center">編輯</h3>
+            <form action="/patients/<%= result[0] %>?_method=PUT" method="post">
+                <% if (errors.length > 0) { %>
+                    <% for(var i = 0; i < errors.length; i++) { %>
+                        <div class="alert alert-danger mb-15" role="alert">
+                            <%= errors[i].msg %>
+                        </div>
+                    <% } %>
+                <% } %>
+
+                <div class="form-label-group">
+                    <input type="text" id="inputUsername" class="form-control" placeholder="First Name" name="first_name" value="<%if (inputs.length > 0) { %><%= inputs[0].first_name %><% }else{ %><%= result[1] %><% } %>" required autofocus>
+                    <label for="inputUsername">First Name</label>
+                </div>
+                <div class="form-label-group">
+                    <input type="text" id="inputUsername" class="form-control" placeholder="Last Name" name="last_name" value="<%if (inputs.length > 0) { %><%= inputs[0].last_name %><% }else{ %><%= result[2] %><% } %>" required>
+                    <label for="inputUsername">Last Name</label>
+                </div>
+                <div class="form-label-group">
+                    <input type="text" id="inputUsername" class="form-control" placeholder="Age" name="age" value="<%if (inputs.length > 0) { %><%= inputs[0].age %><% }else{ %><%= result[3] %><% } %>" required>
+                    <label for="inputUsername">Age</label>
+                </div>
+                <div class="form-label-group">
+                    <input type="text" id="inputUsername" class="form-control" placeholder="DOB" name="dob" value="<%if (inputs.length > 0) { %><%= inputs[0].dob %><% }else{ %><%= result[4] %><% } %>" required>
+                    <label for="inputUsername">DOB</label>
+                </div>
+                <div class="form-label-group">
+                    <input type="text" id="inputUsername" class="form-control" placeholder="Email" name="email" value="<%if (inputs.length > 0) { %><%= inputs[0].email %><% }else{ %><%= result[5] %><% } %>" required>
+                    <label for="inputUsername">Email</label>
+                </div>
+                <div class="form-label-group">
+                    <input type="text" id="inputUsername" class="form-control" placeholder="Phone Number" name="phone_number" value="<%if (inputs.length > 0) { %><%= inputs[0].phone_number %><% }else{ %><%= result[6] %><% } %>" required>
+                    <label for="inputUsername">Phone Number</label>
+                </div>
+                <div class="form-label-group">
+                    <input type="text" id="inputUsername" class="form-control" placeholder="Gender Id" name="gender_id" value="<%if (inputs.length > 0) { %><%= inputs[0].gender_id %><% }else{ %><%= result[7] %><% } %>" required>
+                    <label for="inputUsername">Gender Id</label>
+                </div>
+                <div class="form-label-group">
+                    <input type="text" id="inputUsername" class="form-control" placeholder="Address Id" name="address_id" value="<%if (inputs.length > 0) { %><%= inputs[0].address_id %><% }else{ %><%= result[8] %><% } %>" required>
+                    <label for="inputUsername">Address Id</label>
+                </div>
+
+
+
+                <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">提交</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer %>

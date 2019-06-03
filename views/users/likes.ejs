@@ -1,0 +1,56 @@
+<% include ../partials/header %>
+
+<% if (alert.length > 0) { %>
+<div class="alert alert-success success-alert" role="alert">
+    <span class="mr-15"><%= alert %></span>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<% } %>
+
+<div class="container ptb-125">
+    <div class="card item bd-none mb-30">
+        <div class="card-body">
+            <div class="flex jc-center mb-15"><img src="<%= results[0][0].imageurl %>" alt="" class="width-100 height-100 border-radius" /></div>
+            <h5 class="card-title mb-15 text-center"><%= results[0][0].username %></h5>
+            <div class="vert mb-15 text-center">
+                <div class="mb-15"><a href="/users/<%= results[0][0].id %>" class="fs-18"><span id="postscount"><%= results[2][0].postscount %></span> Posts</a></div>
+                <div class="mb-15"><a href="/users/<%= results[0][0].id %>/following" class="fs-18"><%= results[3][0].followingcount %> Following</a></div>
+                <div class="mb-15"><a href="/users/<%= results[0][0].id %>/followers" class="fs-18"><%= results[4][0].followerscount %></span> Followers</a></div>
+                <div class="mb-15"><a href="/users/<%= results[0][0].id %>/topics" class="fs-18"><%= results[5][0].topicscount %> Topics</a></div>
+                <div class="mb-15"><a href="/users/<%= results[0][0].id %>/comments" class="fs-18"><%= results[6][0].commentscount %> Comments</a></div>
+                <div><a href="/users/<%= results[0][0].id %>/likes" class="fs-18"><span id="likescount"><%= results[7][0].likescount %></span> Likes</a></div>
+            </div>
+            <p class="card-text mb-15 text-center">Joined <%= moment(results[0][0].datecreated).format('LLL') %></p>
+            <p class="card-text mb-15 text-center"><%= results[0][0].description %></p>
+        </div>
+    </div>
+    <div id="container">
+        <% for(var i=0; i < results[1].length; i++) { %>
+        <div class="card item mb-30">
+            <div class="card-body">
+                <h5 class="card-title mb-15"><a href="/posts/<%= results[1][i].id %>" class="bold"><%= results[1][i].name %></a></h5>
+                <p class="card-text mb-15"><%= results[1][i].description %></p>
+                <div class="flex">
+                    <div class="mr-15">
+                        <a href="/users/<%= results[1][i].userid %>"><img src="<%= results[1][i].userimageurl %>" alt="" class="width-60 height-60 border-radius" /></a>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="/users/<%= results[1][i].userid %>" class="bold fs-16 marginr-5"><%= results[1][i].username %></a>
+                            <a href="/topics/<%= results[1][i].topicid %>" class="bold fs-16"><%= results[1][i].topicname %></a>
+                        </div>
+                        <div class="fs-16"><%= moment(results[1][i].datecreated).format('LLL') %></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% } %>
+    </div>
+    <div id="loadMore">
+    </div>
+</div>
+
+<script src="/javascripts/userloadmorelikes.js"></script>
+<% include ../partials/footer %>

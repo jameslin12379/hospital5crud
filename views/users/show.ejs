@@ -1,0 +1,35 @@
+<% include ../partials/header %>
+
+<% if (alert.length > 0) { %>
+<div class="alert alert-success success-alert" role="alert">
+    <span class="mr-15"><%= alert %></span>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<% } %>
+
+<div class="container ptb-125">
+<div class="card item bd-none mb-30">
+    <div class="card-body">
+        <div class="flex jc-center mb-15"><img src="<%= result[4] %>" alt="" class="width-100 height-100 border-radius" /></div>
+        <h5 class="card-title mb-15 text-center"><%= result[1] %></h5>
+        <h5 class="card-title mb-15 text-center"><%= result[2] %></h5>
+        <p class="card-text mb-15 text-center">Joined <%= moment(result[5]).format('LLL') %></p>
+        <p class="card-text mb-15 text-center"><%= result[3] %></p>
+        <% if (req.user[0] === result[0]) { %>
+        <div class="flex jc-center">
+            <a class="btn btn-primary mr-15" href="/users/<%= result[0] %>/edit">編輯</a>
+            <form action="/users/<%= result[0] %>?_method=DELETE" method="post">
+                <button type="submit" class="btn btn-primary">刪除</button>
+            </form>
+        </div>
+        <% } %>
+    </div>
+</div>
+
+
+</div>
+
+
+<% include ../partials/footer %>

@@ -1,0 +1,48 @@
+<% include ../partials/header %>
+
+<div class="container ptb-125">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <h3 class="login-heading mb-4 text-center">編輯</h3>
+            <form action="/addresses/<%= result[0] %>?_method=PUT" method="post">
+                <% if (errors.length > 0) { %>
+                <% for(var i = 0; i < errors.length; i++) { %>
+                <div class="alert alert-danger mb-15" role="alert">
+                    <%= errors[i].msg %>
+                </div>
+                <% } %>
+                <% } %>
+                <div class="form-label-group">
+                    <input type="text" id="inputUsername" class="form-control" placeholder="Building number" name="building_number" value="<%if (inputs.length > 0) { %><%= inputs[0].building_number %><% }else{ %><%= result[1] %><% } %>" required autofocus>
+                    <label for="inputUsername">Building number</label>
+                </div>
+                <div class="form-label-group">
+                    <input type="text" id="inputUsername" class="form-control" placeholder="Street" name="street" value="<%if (inputs.length > 0) { %><%= inputs[0].street %><% }else{ %><%= result[2] %><% } %>" required autofocus>
+                    <label for="inputUsername">Street</label>
+                </div>
+                <div class="form-label-group">
+                    <input type="text" id="inputUsername" class="form-control" placeholder="City" name="city" value="<%if (inputs.length > 0) { %><%= inputs[0].city %><% }else{ %><%= result[3] %><% } %>" required autofocus>
+                    <label for="inputUsername">City</label>
+                </div>
+                <div class="form-label-group">
+                    <input type="text" id="inputUsername" class="form-control" placeholder="State" name="state" value="<%if (inputs.length > 0) { %><%= inputs[0].state %><% }else{ %><%= result[4] %><% } %>" required autofocus>
+                    <label for="inputUsername">State</label>
+                </div>
+                <div class="form-label-group">
+                    <input type="text" id="inputUsername" class="form-control" placeholder="Country" name="country" value="<%if (inputs.length > 0) { %><%= inputs[0].country %><% }else{ %><%= result[5] %><% } %>" required autofocus>
+                    <label for="inputUsername">Country</label>
+                </div>
+                <div class="form-label-group">
+                    <input type="text" id="inputUsername" class="form-control" placeholder="Zip" name="zip" value="<%if (inputs.length > 0) { %><%= inputs[0].zip %><% }else{ %><%= result[6] %><% } %>" required autofocus>
+                    <label for="inputUsername">Zip</label>
+                </div>
+
+
+
+                    <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">提交</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer %>

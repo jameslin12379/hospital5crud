@@ -1,0 +1,59 @@
+<% include ../partials/header %>
+
+<div class="container-fluid">
+    <div class="row no-gutter">
+        <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+        <div class="col-md-8 col-lg-6">
+            <div class="login d-flex align-items-center py-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9 col-lg-8 mx-auto">
+                            <h3 class="login-heading mb-4">註冊</h3>
+                            <form action="/users" method="post">
+                                <% if (errors.length > 0) { %>
+                                <% for(var i = 0; i < errors.length; i++) { %>
+                                <div class="alert alert-danger mb-15" role="alert">
+                                    <%= errors[i].msg %>
+                                </div>
+                                <% } %>
+                                <% } %>
+
+                                <div class="form-label-group">
+                                    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="email" <% if (inputs.length > 0) { %>value="<%=inputs[0].email%>"<% } %> required autofocus>
+                                    <label for="inputEmail">Email address</label>
+                                </div>
+
+                                <div class="form-label-group">
+                                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
+                                    <label for="inputPassword">Password</label>
+                                </div>
+
+                                <div class="form-label-group">
+                                    <input type="text" id="inputUsername" class="form-control" placeholder="Username" name="username" <% if (inputs.length > 0) { %>value="<%=inputs[0].username%>"<% } %> required>
+                                    <label for="inputUsername">Username</label>
+                                </div>
+
+                                <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">註冊</button>
+                                <div class="text-center small">
+                                    已經有帳戶？ <a href="/login">登陸</a></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap core JavaScript -->
+<script src="/startbootstrap-grayscale-gh-pages/vendor/jquery/jquery.min.js"></script>
+<script src="/startbootstrap-grayscale-gh-pages/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="/startbootstrap-grayscale-gh-pages/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="/startbootstrap-grayscale-gh-pages/js/grayscale.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
+</body>
+</html>

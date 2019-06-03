@@ -1,0 +1,141 @@
+<% include ../partials/header %>
+
+<% if (alert.length > 0) { %>
+    <div class="alert alert-success success-alert " role="alert">
+        <span class="mr-15"><%= alert %></span>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+<% } %>
+
+<div class="container pt-100">
+<div class="row">
+    <div class="col-md-3">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col"><a href="/">Addresses</a></th>
+                <!--<th scope="col">First</th>-->
+                <!--<th scope="col">Last</th>-->
+                <!--<th scope="col">Handle</th>-->
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <th scope="row"><a href="/doctors">Doctors</a></th>
+                <!--<td>Mark</td>-->
+                <!--<td>Otto</td>-->
+                <!--<td>@mdo</td>-->
+            </tr>
+            <tr>
+                <th scope="row"><a href="/genders">Genders</a></th>
+                <!--<td>Jacob</td>-->
+                <!--<td>Thornton</td>-->
+                <!--<td>@fat</td>-->
+            </tr>
+            <tr>
+                <th scope="row"><a href="/insurances">Insurances</a></th>
+                <!--<td>Larry</td>-->
+                <!--<td>the Bird</td>-->
+                <!--<td>@twitter</td>-->
+            </tr>
+            <tr>
+                <th scope="row" class="active"><a href="/medications">Medications</a></th>
+                <!--<td>Larry</td>-->
+                <!--<td>the Bird</td>-->
+                <!--<td>@twitter</td>-->
+            </tr>
+            <tr>
+                <th scope="row"><a href="/patients">Patients</a></th>
+                <!--<td>Larry</td>-->
+                <!--<td>the Bird</td>-->
+                <!--<td>@twitter</td>-->
+            </tr>
+            <tr>
+                <th scope="row"><a href="/procedures">Procedures</a></th>
+                <!--<td>Larry</td>-->
+                <!--<td>the Bird</td>-->
+                <!--<td>@twitter</td>-->
+            </tr>
+            <tr>
+                <th scope="row"><a href="/visits">Visits</a></th>
+                <!--<td>Larry</td>-->
+                <!--<td>the Bird</td>-->
+                <!--<td>@twitter</td>-->
+            </tr>
+            <tr>
+                <th scope="row"><a href="/visitsmedications">Visitsmedications</a></th>
+                <!--<td>Larry</td>-->
+                <!--<td>the Bird</td>-->
+                <!--<td>@twitter</td>-->
+            </tr>
+            <tr>
+                <th scope="row"><a href="/visitsprocedures">Visitsprocedures</a></th>
+                <!--<td>Larry</td>-->
+                <!--<td>the Bird</td>-->
+                <!--<td>@twitter</td>-->
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <div class="col-md-9 ofx-s">
+        <h5><%= count %> 排</h5>
+        <table class="table">
+            <!--<thead>-->
+            <!--<tr>-->
+                <!--<th scope="col">#</th>-->
+                <!--<th scope="col">First</th>-->
+                <!--<th scope="col">Last</th>-->
+                <!--<th scope="col">Handle</th>-->
+            <!--</tr>-->
+            <!--</thead>-->
+            <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Cost</th>
+                <th scope="col">Date Created</th>
+                <th scope="col">Date Edited</th>
+                <% if (req.user[4] == 1) { %>
+                    <th scope="col"><a href="/medications/new" class="btn btn-outline-secondary">創建</a></th>
+                <% } %>
+
+            </tr>
+            </thead>
+            <tbody>
+            <% for(var i=0; i < results.length; i++) { %>
+                <tr>
+                    <td><%= results[i][0] %></td>
+                    <td><%= results[i][1] %></td>
+                    <td><%= results[i][2] %></td>
+                    <td><%= results[i][3] %></td>
+                    <td><%= results[i][4] %></td>
+                    <td><%= results[i][5] %></td>
+                    <% if (req.user[4] == 1) { %>
+                        <td>
+                            <a href="/medications/<%= results[i][0] %>/edit" class="btn btn-outline-secondary">編輯</a>
+                        </td>
+                        <td>
+                            <form action="/medications/<%= results[i][0] %>?_method=DELETE" method="post" id="form#<%= results[i][0] %>">
+                                <button type="submit" class="btn btn-outline-secondary delete-button">刪除</button>
+                            </form>
+                        </td>
+                    <% } %>
+                </tr>
+            <% } %>
+            </tbody>
+        </table>
+
+
+    </div>
+</div>
+
+
+</div>
+
+
+<% include ../partials/footer %>
